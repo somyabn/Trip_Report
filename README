@@ -1,0 +1,28 @@
+Introduction:
+The app expects the input file “input.txt” in the root directory as argument to the script and generates driving history report “output.txt” at the root directory.
+Since I am most comfortable in ruby , I have implemented the solution in the same and tested units using Rspec ( A ruby gem for unit testing).
+
+
+Created Driver and Trip class  for modelleng the objects in the given problem.
+I divided the problem into following parts:
+Parsing input commands (driver_trip_parser.rb)  - fetch the commands in file line by line and parse into driver and trip instances.
+Calculating driving history for each driver (driver_trip_stats.rb)
+Generating Report for the calculated values for each driver. (driver_trip_report_generator.rb)
+
+
+Project structure:
+The root:Trip_Report folder:
+Navigate here in terminal to run the script: ruby generate_driver_trips_report.rb "input.txt"
+this should generate the "output.txt" in the same folder and also prints the report to console.
+
+Tests are in  spec folder: created tests to test each class and the class methods.
+Tests are added for edge cases like
+1.Trip with average speed more than 100 and less than 5 is not coming on report.
+2.The report is sorted with highest total miles driver report first.
+to run tests go to root folder run following commands:
+gem install 'rspec'
+rspec spec
+
+
+Rspec gem is listed in gemfile , to install the same , run command gem install 'rspec'
+
